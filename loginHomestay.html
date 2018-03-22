@@ -7,9 +7,7 @@
   <title>Document</title>
 </head>
   
-
 <body>
-
 
   <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -17,6 +15,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarCollapse">
 
           <ul class="navbar-nav mr-auto">
@@ -40,16 +39,60 @@
             
           </form>
 
-
         </div>
       </nav>
     </header>
 
+    <div class="signInForm">
+      <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <div class="signUpForm">
+        <form>
+          <div class="form-group">
+              <label for="inputName">Name</label>
+              <input type="email" class="form-control" id="inputName" aria-describedby="emailHelp" placeholder="Name">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+
+          <div class="form-group">
+              <label for="inputLastName">Last Name</label>
+              <input type="email" class="form-control" id="inputLastName" aria-describedby="emailHelp" placeholder="Last Name">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 
 
+    <!-- make the login page delay -->
 
 
   <!-- ========================== JS Scripts and CDN ========================== -->
+
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   
@@ -73,8 +116,6 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/customcss.css">
-
-    
 
   <!-- ========================== JS Scripts and CDN ========================== -->
 

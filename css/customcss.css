@@ -1,7 +1,5 @@
 .searchField{
   width: 20em !important;
-
-  
 } 
 
 .searchButton {
@@ -13,5 +11,20 @@
   border-top-left-radius: 90% !important;
   border-bottom-left-radius: 90% !important;
   width: 2em !important;
+}
+
+.signInForm {
+  background-color: red;
+  width: 30em;
+  height: 16em;
+
+
+}
+
+.signUpForm {
+  background-color: blue;
+  width: 30em;
+  height: 30em;
+
 
 }
