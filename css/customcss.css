@@ -1,0 +1,17 @@
+.searchField{
+  width: 20em !important;
+
+  
+} 
+
+.searchButton {
+  border-top-right-radius: 50% !important;
+  border-bottom-right-radius: 50% !important;
+}
+
+.inputLeft{
+  border-top-left-radius: 90% !important;
+  border-bottom-left-radius: 90% !important;
+  width: 2em !important;
+
+}
