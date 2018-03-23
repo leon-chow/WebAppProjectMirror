@@ -1,3 +1,6 @@
+
+/* Log In Page  */
+
 .searchField{
   width: 20em !important;
 } 
@@ -14,17 +17,43 @@
 }
 
 .signInForm {
-  background-color: red;
-  width: 30em;
-  height: 16em;
-
-
+  padding: 3em;
+  margin: 3em;
+  background-color: #BBDEFB;
+  width: auto;
+  height: auto;
 }
 
 .signUpForm {
-  background-color: blue;
-  width: 30em;
-  height: 30em;
+  padding: 3em;
+  margin: 3em;
+  background-color: #DCEDC8;
+  width: auto;
+  height: auto;
+}
 
+.signInForm .signUpForm {
+  padding: 3em;
+  margin: 3em;
+}
 
+.loginTab {
+  margin: 30em;
+}
+
+.signUpButton {
+  background-color: #9CCC65;
+}
+
+.signInButton {
+  background-color: #42A5F5;
+}
+
+.btn {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.btn:hover {
+  box-shadow: 0 7px 14px rgba(0,0,0,0.15), 0 5px 5px rgba(0,0,0,0.22);
 }

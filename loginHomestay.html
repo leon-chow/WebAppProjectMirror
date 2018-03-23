@@ -33,7 +33,9 @@
               <input type="text" class="form-control searchField" placeholder="Country, City, Postal code" aria-label="Country, City, Postal code" aria-describedby="basic-addon1">
 
               <div class="input-group-prepend">
-                <span class="input-group-text searchButton" id="basic-addon1"><i class="material-icons">search</i></span>
+                <button class="input-group-text searchButton"> 
+                    <i class="material-icons">search</i>
+                </button> 
               </div>  
             </div>
             
@@ -43,49 +45,60 @@
       </nav>
     </header>
 
-    <div class="signInForm">
-      <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+    <div class="container">
+      <div class="container">
+          <div class="signInForm container-fluid rounded">
+              <form>
+                  <h3>Sign In</h3>
+                  <div class="form-group">
+                    <label for="signInInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="signInleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="signInInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="signInInputPassword1" placeholder="Password">
+                  </div>
+        
+                  <button type="submit" class="btn signInButton">Submit</button>
+                </form>
+            </div>
+      </div>
+
+      <div class="container ">
+          <div class="signUpForm container-fluid rounded">
+              <form>
+                <h3>Sign Up</h3>
+                <div class="form-group">
+                    <label for="signUpInputName">Name</label>
+                    <input type="email" class="form-control" id="signUpInputName" aria-describedby="emailHelp" placeholder="Name">
+                </div>
+      
+                <div class="form-group">
+                    <label for="signUpInputLastName">Last Name</label>
+                    <input type="email" class="form-control" id="signUpInputLastName" aria-describedby="emailHelp" placeholder="Last Name">
+                </div>
+      
+                <div class="form-group">
+                  <label for="signUpInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="signUpInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="signUpInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="signUpInputPassword1" placeholder="Password">
+                </div>
+      
+                <button type="submit" class="btn signUpButton">Submit</button>
+              </form>
+          </div>
     </div>
+    
+    
 
-    <div class="signUpForm">
-        <form>
-          <div class="form-group">
-              <label for="inputName">Name</label>
-              <input type="email" class="form-control" id="inputName" aria-describedby="emailHelp" placeholder="Name">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
 
-          <div class="form-group">
-              <label for="inputLastName">Last Name</label>
-              <input type="email" class="form-control" id="inputLastName" aria-describedby="emailHelp" placeholder="Last Name">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
 
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
 
 
     <!-- make the login page delay -->
