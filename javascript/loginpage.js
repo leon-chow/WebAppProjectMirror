@@ -11,8 +11,7 @@ $(document).ready(function(){
   //   getLoc(position.coords.latitude, position.coords.longitude);
   // });
 
-
-
+  
   $(".signInForm").hide();
   $(".signUpForm").hide();
   $(".aboutWindow").hide();
