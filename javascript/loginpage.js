@@ -47,7 +47,7 @@ $(document).ready(function(){
     $(".aboutWindow").slideToggle(200);
   });
 
-  showMap(latValue, lonValue);
+  // showMap(latValue, lonValue);
 
 });
 
