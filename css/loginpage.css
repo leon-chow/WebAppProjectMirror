@@ -18,25 +18,31 @@
 
 .signInForm {
   padding: 3em;
-  margin: 3em;
+  margin: 6em;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #CFD8DC;
-  width: auto;
+  width: 30em;
   height: auto;
 }
 
 .signUpForm {
   padding: 3em;
-  margin: 3em;
+  margin: 6em;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #CFD8DC;
-  width: auto;
+  width: 30em;
   height: auto;
 }
 
 .aboutWindow {
   padding: 3em;
-  margin: 3em;
+  margin: 6em;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #CFD8DC;
-  width: auto;
+  width: 30em;
   height: auto;
 }
 
