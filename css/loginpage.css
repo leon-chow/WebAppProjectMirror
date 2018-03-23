@@ -29,6 +29,7 @@
   background-color: #CFD8DC;
   width: 30em;
   height: auto;
+  box-shadow: 0px 14px 32px -1px rgba(0,0,0,0.57);
 }
 
 .signUpForm {
@@ -39,6 +40,7 @@
   background-color: #CFD8DC;
   width: 30em;
   height: auto;
+  box-shadow: 0px 14px 32px -1px rgba(0,0,0,0.57);
 }
 
 .aboutWindow {
@@ -49,6 +51,7 @@
   background-color: #CFD8DC;
   width: 30em;
   height: auto;
+  box-shadow: 0px 14px 32px -1px rgba(0,0,0,0.57);
 }
 
 .signUpButton {

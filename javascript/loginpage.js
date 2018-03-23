@@ -13,7 +13,6 @@ $(document).ready(function(){
 
 
 
-
   $(".signInForm").hide();
   $(".signUpForm").hide();
   $(".aboutWindow").hide();
@@ -47,7 +46,6 @@ $(document).ready(function(){
   $(".aboutCloseButton").click(function(){
     $(".aboutWindow").slideToggle(200);
   });
-
 
   showMap(latValue, lonValue);
 
