@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Bootsrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Bootstrap Javascript and JQuery Requirements -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- JQuery -->
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+  <!-- Material Icon Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/userpage.css">
+
+  <!-- Login Javascript -->
+  <script src="javascript/userpage.js"></script>
+
+
+  <title>HomeStay</title>
+</head>
+<body>
+  <!-- Web Page header -->
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="loginHomestay.html">HomeStay</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item signUpToggle">
+            <a class="nav-link" href="#">Sign Up </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link signInToggle" href="#">Sign In</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link aboutToggle" href="#">About</a>
+          </li>
+        </ul>
+
+        <form class="form-inline mt-2 mt-md-0">
+
+          <div class="input-group">
+            <input type="text" class="form-control searchField" placeholder="Country, City, Postal code" aria-label="Country, City, Postal code" aria-describedby="basic-addon1">
+
+            <div class="input-group-prepend">
+              <button class="input-group-text searchButton"> 
+                  <i class="material-icons">search</i>
+              </button> 
+            </div>  
+          </div>
+          
+        </form>
+
+      </div>
+    </nav>
+    </header>
+
+    <div class="container">
+        <div class="signUpForm container-fluid rounded">
+            <form>
+            <h3>Sign Up</h3>
+            <div class="form-group">
+                <label for="signUpInputName">Find a place</label>
+                <input type="text" class="form-control" id="addressInputName" aria-describedby="addressInput" placeholder="Enter Address">
+            </div>
+            </form>
+        </div>
+    </div>

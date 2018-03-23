@@ -1,0 +1,30 @@
+
+/* Log In Page  */
+
+.navbar-nav > li{
+    margin-left:10px;
+    margin-right:10px;
+  }
+  
+  .navbar {
+    position:fixed;
+  }
+  
+  .searchField{
+    width: 20em !important;
+  } 
+  
+  .searchButton {
+    border-top-right-radius: 50% !important;
+    border-bottom-right-radius: 50% !important;
+  }
+  
+  .inputLeft {
+    border-top-left-radius: 90% !important;
+    border-bottom-left-radius: 90% !important;
+    width: 2em !important;
+  }
+
+.signUpForm {
+    padding:3em;
+}

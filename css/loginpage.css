@@ -6,6 +6,10 @@
   margin-right:10px;
 }
 
+.navbar {
+  position:fixed;
+}
+
 .searchField{
   width: 20em !important;
 } 
@@ -15,30 +19,24 @@
   border-bottom-right-radius: 50% !important;
 }
 
-.inputLeft{
+.inputLeft {
   border-top-left-radius: 90% !important;
   border-bottom-left-radius: 90% !important;
   width: 2em !important;
 }
 
-.signInForm {
-  padding: 3em;
-  margin: 6em;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #CFD8DC;
-  width: 30em;
-  height: auto;
-  box-shadow: 0px 14px 32px -1px rgba(0,0,0,0.57);
+.form {
+  margin-top:3rem;
+  padding-top:3em;
 }
 
 .signUpForm {
-  padding: 3em;
   margin: 6em;
   margin-left: auto;
   margin-right: auto;
   background-color: #CFD8DC;
   width: 30em;
+  position: relative;
   height: auto;
   box-shadow: 0px 14px 32px -1px rgba(0,0,0,0.57);
 }
@@ -64,14 +62,13 @@
   color: white !important;
 }
 
-.signUpCloseButton {
+.signInCloseButton {
   background-color: #90A4AE;
   color: white !important;
 }
 
-.signInCloseButton {
-  background-color: #90A4AE;
-  color: white !important;
+.signInForm {
+  padding: 3em;
 }
 
 .aboutCloseButton {
