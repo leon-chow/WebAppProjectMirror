@@ -32,18 +32,37 @@
   height: auto;
 }
 
-.signInForm .signUpForm {
+.aboutWindow {
   padding: 3em;
   margin: 3em;
+  background-color: #CFD8DC;
+  width: auto;
+  height: auto;
 }
 
 .signUpButton {
   background-color: #9CCC65;
+  color: white !important;
 }
-
 
 .signInButton {
   background-color: #42A5F5;
+  color: white !important;
+}
+
+.signUpCloseButton {
+  background-color: #90A4AE;
+  color: white !important;
+}
+
+.signInCloseButton {
+  background-color: #90A4AE;
+  color: white !important;
+}
+
+.aboutCloseButton {
+  background-color: #78909C;
+  color: white !important;
 }
 
 .btn {
