@@ -1,6 +1,11 @@
 
 /* Log In Page  */
 
+.navbar-nav > li{
+  margin-left:10px;
+  margin-right:10px;
+}
+
 .searchField{
   width: 20em !important;
 } 
