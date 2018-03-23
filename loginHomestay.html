@@ -5,131 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+
+  <!-- My Key -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj-44JUPi518WdDL912NV_21Bv9hzIYFA&callback"
+  type="text/javascript"></script>
 </head>
   
 <body>
 
+  <!-- Web Page header -->
   <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">HomeStay</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">HomeStay</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="collapse navbar-collapse" id="navbarCollapse">
 
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item signUpToggle">
-              <a class="nav-link" href="#">Sign Up </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link signInToggle" href="#">Sign In</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link aboutToggle" href="#">About</a>
-            </li>
-          </ul>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item signUpToggle">
+            <a class="nav-link" href="#">Sign Up </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link signInToggle" href="#">Sign In</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link aboutToggle" href="#">About</a>
+          </li>
+        </ul>
 
-          <form class="form-inline mt-2 mt-md-0">
+        <form class="form-inline mt-2 mt-md-0">
 
-            <div class="input-group">
-              <input type="text" class="form-control searchField" placeholder="Country, City, Postal code" aria-label="Country, City, Postal code" aria-describedby="basic-addon1">
+          <div class="input-group">
+            <input type="text" class="form-control searchField" placeholder="Country, City, Postal code" aria-label="Country, City, Postal code" aria-describedby="basic-addon1">
 
-              <div class="input-group-prepend">
-                <button class="input-group-text searchButton"> 
-                    <i class="material-icons">search</i>
-                </button> 
-              </div>  
+            <div class="input-group-prepend">
+              <button class="input-group-text searchButton"> 
+                  <i class="material-icons">search</i>
+              </button> 
+            </div>  
+          </div>
+          
+        </form>
+
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- Sign Up Forms, Sign Forms, and About Section -->
+
+  <div class="container">
+    <div class="signUpForm container-fluid rounded">
+          <form>
+            <h3>Sign Up</h3>
+            <div class="form-group">
+                <label for="signUpInputName">Name</label>
+                <input type="email" class="form-control" id="signUpInputName" aria-describedby="emailHelp" placeholder="Enter Name">
             </div>
-            
-          </form>
-
-        </div>
-      </nav>
-    </header>
-
-
-    <div class="container">
-
-
-      <div class="signUpForm container-fluid rounded">
-            <form>
-              <h3>Sign Up</h3>
-              <div class="form-group">
-                  <label for="signUpInputName">Name</label>
-                  <input type="email" class="form-control" id="signUpInputName" aria-describedby="emailHelp" placeholder="Name">
-              </div>
-    
-              <div class="form-group">
-                  <label for="signUpInputLastName">Last Name</label>
-                  <input type="email" class="form-control" id="signUpInputLastName" aria-describedby="emailHelp" placeholder="Last Name">
-              </div>
-    
-              <div class="form-group">
-                <label for="signUpInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="signUpInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-              </div>
-              <div class="form-group">
-                <label for="signUpInputPassword1">Password</label>
-                <input type="password" class="form-control" id="signUpInputPassword1" placeholder="Password">
-              </div>
-    
-              <button type="submit" class="btn signUpButton">Submit</button>
-              <button type="submit" class="btn signUpCloseButton float-right">Close</button>
-            </form>
-      </div>
   
-      
-      <div class="signInForm container-fluid rounded">
-          <form>
-              <h3>Sign In</h3>
-              <div class="form-group">
-                <label for="signInInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="signInleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              </div>
-              <div class="form-group">
-                <label for="signInInputPassword1">Password</label>
-                <input type="password" class="form-control" id="signInInputPassword1" placeholder="Password">
-              </div>
-    
-              <button type="submit" class="btn signInButton">Submit</button>
-              <button type="submit" class="btn signInCloseButton float-right">Close</button>
+            <div class="form-group">
+                <label for="signUpInputLastName">Last Name</label>
+                <input type="email" class="form-control" id="signUpInputLastName" aria-describedby="emailHelp" placeholder="Enter Last Name">
+            </div>
+  
+            <div class="form-group">
+              <label for="signUpInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="signUpInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="signUpInputPassword1">Password</label>
+              <input type="password" class="form-control" id="signUpInputPassword1" placeholder="Enter Password">
+            </div>
+  
+            <button type="submit" class="btn signUpButton">Submit</button>
+            <button type="submit" class="btn signUpCloseButton float-right">Close</button>
           </form>
-      </div>
-
-      <div class="aboutWindow container-fluid rounded">
-          <form>
-              <h3>About HomeStay</h3>
-              <div class="form-group">
-                <p>
-                    HomeStay is a final project for CSCI 3230U Web Application Development created by Leon Chow and Mark Bryan. It operates by provinding an online marketplace and hospitality service for people to lease or rent short-term homestays. HomeStay does not own any real estate or conduct tours. It is simply a broker which receives percentage service fees in conjunction with every booking. 
-                </p>
-              </div>
-    
-              <button type="submit" class="btn aboutCloseButton">Close</button>
-          </form>
-      </div>
-      
-      
     </div>
     
+    <div class="signInForm container-fluid rounded">
+        <form>
+            <h3>Sign In</h3>
+            <div class="form-group">
+              <label for="signInInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="signInleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="signInInputPassword1">Password</label>
+              <input type="password" class="form-control" id="signInInputPassword1" placeholder="Enter Password">
+            </div>
+  
+            <button type="submit" class="btn signInButton">Submit</button>
+            <button type="submit" class="btn signInCloseButton float-right">Close</button>
+        </form>
+    </div>
+
+    <div class="aboutWindow container-fluid rounded">
+        <form>
+            <h3>About HomeStay</h3>
+            <div class="form-group">
+              <p>
+                  HomeStay is a final project for CSCI 3230U Web Application Development created by Leon Chow and Mark Bryan. It operates by provinding an online marketplace and hospitality service for people to lease or rent short-term homestays. HomeStay does not own any real estate or conduct tours. It is simply a broker which receives percentage service fees in conjunction with every booking. 
+              </p>
+            </div>
+  
+            <button type="submit" class="btn aboutCloseButton">Close</button>
+        </form>
+    </div>    
+  </div>
+    
+
+<!-- Google Map -->
+
+    
+
 
     
 
 
 
-    
 
 
 
 
 
 
-
-
-
-    <!-- make the login page delay -->
+    <!--NOTE: make the login page delay -->
 
 
   <!-- ========================== JS Scripts and CDN ========================== -->
@@ -162,6 +165,10 @@
 
     <!-- Login Javascript -->
     <script src="/javascript/loginpage.js"></script>
+
+    <!-- My Key -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj-44JUPi518WdDL912NV_21Bv9hzIYFA&callback"
+    type="text/javascript"></script>
 
   <!-- ========================== JS Scripts and CDN ========================== -->
 

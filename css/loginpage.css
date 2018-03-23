@@ -19,7 +19,7 @@
 .signInForm {
   padding: 3em;
   margin: 3em;
-  background-color: #BBDEFB;
+  background-color: #CFD8DC;
   width: auto;
   height: auto;
 }
@@ -27,7 +27,7 @@
 .signUpForm {
   padding: 3em;
   margin: 3em;
-  background-color: #DCEDC8;
+  background-color: #CFD8DC;
   width: auto;
   height: auto;
 }
@@ -76,3 +76,10 @@
 
 
 
+/* map */
+
+#map {
+  width:400px;
+  height:400px;
+  background-color: yellow;
+}
