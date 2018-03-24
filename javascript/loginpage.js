@@ -1,5 +1,5 @@
-
-
+//have a statement to hide sign in and sign up button if the user is already logged in. reshow those 2 buttons when
+//user logs out
 
 $(document).ready(function(){
 
