@@ -1,29 +1,55 @@
 
 /* Log In Page  */
 
-.navbar-nav > li{
+.navbar-nav > li {
+    margin:auto;
     margin-left:10px;
     margin-right:10px;
-  }
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  border: 1em;
+  min-width: 160px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown a {
+  color: darkgrey;
+}
+
+.dropdown a:hover {
+  color: lightgrey;
+  text-decoration: none;
+  display: block;
+}
   
-  .navbar {
-    position:fixed;
-  }
-  
-  .searchField{
-    width: 20em !important;
-  } 
-  
-  .searchButton {
-    border-top-right-radius: 50% !important;
-    border-bottom-right-radius: 50% !important;
-  }
-  
-  .inputLeft {
-    border-top-left-radius: 90% !important;
-    border-bottom-left-radius: 90% !important;
-    width: 2em !important;
-  }
+.searchField{
+  width: 20em !important;
+} 
+
+.searchButton {
+  border-top-right-radius: 50% !important;
+  border-bottom-right-radius: 50% !important;
+}
+
+.inputLeft {
+  border-top-left-radius: 90% !important;
+  border-bottom-left-radius: 90% !important;
+  width: 2em !important;
+}
 
 .signUpForm {
     padding:3em;
