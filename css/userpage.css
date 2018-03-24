@@ -59,3 +59,17 @@
 .form-control {
     width:20em;
 }
+
+#findMap {
+  padding:10px;
+  margin:10px;
+  width:30rem;
+  height:20rem;
+}
+
+#listMap {
+  padding:10px;
+  margin:10px;
+  width:30rem;
+  height:20rem;
+}

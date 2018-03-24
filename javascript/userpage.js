@@ -3,23 +3,27 @@ $(document).ready(function() {
         var findLongitude = parseFloat($("#findAddressLong").val());
         var findLatitude = parseFloat($("#findAddressLat").val());
         var mapCanvas = document.getElementById("findMap");
-        getLoc(findLongitude, findLatitude, mapCanvas);
+        getLoc(findLatitude, findLongitude, mapCanvas);
     });
     $("#goListButton").click(function () {
         var listLatitude = parseFloat($("#listAddressLat").val());
         var listLongitude = parseFloat($("#listAddressLong").val());
         var mapCanvas = document.getElementById("listMap");
-        getLoc(listLongitude, listLatitude, mapCanvas);
+        getLoc(listLatitude, listLongitude, mapCanvas);
     })
 });
 
 function showMap(lat, lng, mapCanvas) {
    var mapProp= {
-       center:new google.maps.LatLng(lat, lng),
-       zoom:12,
+       center: { lat: lat, lng: lng},
+       zoom:8
    };
    var map=new google.maps.Map(mapCanvas,mapProp);
-   mapCanvas.append(map);
+   var marker = new google.maps.Marker ({
+    position: { lat: lat, lng: lng},
+    map: map,
+    title: 'You are here!'
+  });
 }
 
 function getLoc(findLatitude, findLongitude, mapCanvas) {
