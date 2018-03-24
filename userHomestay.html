@@ -26,7 +26,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/userpage.css">
 
-  <!-- Login Javascript -->
+  <!-- User Page Javascript -->
   <script src="javascript/userpage.js"></script>
 
 
@@ -71,25 +71,30 @@
 
       </div>
     </nav>
-    </header>
+  </header>
 
     <div class="container">
-        <div class="signUpForm container-fluid rounded">
-            <form>
-            <h3>Find a location</h3>
-            <div class="form-group">
-                <label for="signUpInputName">Find a place</label>
-                <input type="text" class="form-control" id="findAddressLat" aria-describedby="addressInput" placeholder="Enter Latitude">
-                <input type="text" class="form-control" id="findAddressLong" aria-describedby="addressInput" placeholder="Enter Longitude">
-                <button> Go </button>
-            </div>
-            <h3>List a location</h3>
-            <div class ="form-group">
-                <label for="signUpInputName">List a place</label>
-                <input type="text" class="form-control" id="listAddressLat"  placeholder="Enter Latitude">
-                <input type="text" class="form-control" id="listAddressLong" placeholder="Enter Longitude">
-                <button> Go </button>
-            </div>
-            </form>
-        </div>
+      <div class="signUpForm container-fluid rounded">
+        <form>
+          <h3>Find a location</h3>
+          <div class="form-group">
+            <label for="signUpInputName">Find a place</label>
+            <input type="text" class="form-control" id="findAddressLat" aria-describedby="addressInput" placeholder="Enter Latitude">
+            <input type="text" class="form-control" id="findAddressLong" aria-describedby="addressInput" placeholder="Enter Longitude">
+            <button id = "goFindButton"> Go </button> 
+            <div id = "findMap"> Map here</div>
+          </div>
+          <h3>List a location</h3>
+          <div class ="form-group">
+            <label for="signUpInputName">List a place</label>
+            <input type="text" class="form-control" id="listAddressLat"  placeholder="Enter Latitude">
+            <input type="text" class="form-control" id="listAddressLong" placeholder="Enter Longitude">
+            <button id = "goListButton"> Go </button>
+            <div id = "listMap"> Map here </div>
+          </div>
+        </form>
+      </div>
     </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxtqseui19HsD_wL29a6LWTcCXjCKOXfs"></script>
+  </body>
+</html>
