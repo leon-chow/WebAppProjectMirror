@@ -76,10 +76,19 @@
     <div class="container">
         <div class="signUpForm container-fluid rounded">
             <form>
-            <h3>Sign Up</h3>
+            <h3>Find a location</h3>
             <div class="form-group">
                 <label for="signUpInputName">Find a place</label>
-                <input type="text" class="form-control" id="addressInputName" aria-describedby="addressInput" placeholder="Enter Address">
+                <input type="text" class="form-control" id="findAddressLat" aria-describedby="addressInput" placeholder="Enter Latitude">
+                <input type="text" class="form-control" id="findAddressLong" aria-describedby="addressInput" placeholder="Enter Longitude">
+                <button> Go </button>
+            </div>
+            <h3>List a location</h3>
+            <div class ="form-group">
+                <label for="signUpInputName">List a place</label>
+                <input type="text" class="form-control" id="listAddressLat"  placeholder="Enter Latitude">
+                <input type="text" class="form-control" id="listAddressLong" placeholder="Enter Longitude">
+                <button> Go </button>
             </div>
             </form>
         </div>

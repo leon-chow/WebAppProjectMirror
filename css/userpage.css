@@ -27,4 +27,9 @@
 
 .signUpForm {
     padding:3em;
+    padding-top:5em;
+}
+
+.form-control {
+    width:20em;
 }
