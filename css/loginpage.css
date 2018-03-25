@@ -25,10 +25,10 @@
   width: 2em !important;
 }
 
-.form {
+/* .form {
   margin-top:3rem;
   padding-top:3em;
-}
+} */
 
 .signUpForm {
   margin: 6em;
@@ -40,6 +40,18 @@
   height: auto;
   box-shadow: 0px 14px 32px -1px rgba(0,0,0,0.57);
 }
+
+.signInForm {
+  margin: 6em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #CFD8DC;
+  width: 30em;
+  position: relative;
+  height: auto;
+  box-shadow: 0px 14px 32px -1px rgba(0,0,0,0.57);
+}
+
 
 .aboutWindow {
   padding: 3em;
@@ -85,9 +97,10 @@
   box-shadow: 0 7px 14px rgba(0,0,0,0.15), 0 5px 5px rgba(0,0,0,0.22);
 }
 
+
 /* map */
-#map {
+/* #map {
   width:400px;
   height:400px;
   background-color: yellow;
-}
+} */
