@@ -33,7 +33,7 @@ $(document).ready(function() {
     $(".aboutWindow").slideToggle(200);
   });
 
-  // showMap(latValue, lonValue);
+  /* showMap(latValue, lonValue);
     $("#goFindButton").click(function () {
         var findLongitude = parseFloat($("#findAddressLong").val());
         var findLatitude = parseFloat($("#findAddressLat").val());
@@ -63,4 +63,4 @@ function showMap(lat, lng, mapCanvas) {
 
 function getLoc(findLatitude, findLongitude, mapCanvas) {
     showMap(findLatitude, findLongitude, mapCanvas);
-}
+} */
