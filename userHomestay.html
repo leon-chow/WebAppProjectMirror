@@ -43,30 +43,18 @@
 
       <div class="collapse navbar-collapse" id="navbarCollapse">
 
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item signUpToggle">
-            <a class="nav-link" href="#">Sign Up </a>
+        <ul class="navbar-nav mr-auto"> id 
+          <li class="nav-item">
+            <a class="nav-link listLocationToggle">List a location</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link signInToggle" href="#">Sign In</a>
+            <a class="nav-link myAccountToggle">My Account</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link aboutToggle" href="#">About</a>
+            <a class="nav-link logoutToggle"> Logout</a>
           </li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account
-              <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Settings </a></li>
-                <li class="divider"></li>
-                <li><a href="#">Preferences</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Help</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Logout</a></li>
-              </ul>
-            </li>
           </ul>
+        </ul>
 
         <form class="form-inline mt-2 mt-md-0">
 
@@ -85,28 +73,120 @@
       </div>
     </nav>
   </header>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">HomeStay</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="container">
-      <div class="signUpForm container-fluid rounded">
-        <form>
-          <h3>Find a location</h3>
-          <div class="form-group">
-            <label for="signUpInputName">Find a place</label>
-            <input type="text" class="form-control" id="findAddressLat" aria-describedby="addressInput" placeholder="Enter Latitude">
-            <input type="text" class="form-control" id="findAddressLong" aria-describedby="addressInput" placeholder="Enter Longitude">
-            <button type ="button" id = "goFindButton"> Go </button> 
-            <div id = "findMap"></div>
-          </div>
-          <h3>List a location</h3>
-          <div class ="form-group">
-            <label for="signUpInputName">List a place</label>
-            <input type="text" class="form-control" id="listAddressLat"  placeholder="Enter Latitude">
-            <input type="text" class="form-control" id="listAddressLong" placeholder="Enter Longitude">
-            <button type ="button" id = "goListButton"> Go </button>
-            <div id = "listMap"></div>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item listAddressToggle">
+            <a class="nav-link" href="#">List a Location</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link myAccountToggle" href="#">My Account</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link logoutToggle" href="#">Logout</a>
+          </li>
+        </ul>
+
+        <form class="form-inline mt-2 mt-md-0">
+
+          <div class="input-group">
+            <input type="text" class="form-control searchField" placeholder="Country, City, Postal code" aria-label="Country, City, Postal code" aria-describedby="basic-addon1">
+
+            <div class="input-group-prepend">
+              <button class="input-group-text searchButton"> 
+                  <i class="material-icons">search</i>
+              </button> 
+            </div>  
           </div>
         </form>
       </div>
+    </nav>
+  </header>
+
+
+  <!-- Sign Up Forms, Sign Forms, and About Section -->
+
+  <div class="container">
+    <div class="listAddressForm container-fluid rounded">
+          <form>
+            <h3>List an Address</h3>
+            <div class="form-group">
+              <label for="listEmailAddress">Your Email Address</label>
+              <input type="email" class="form-control" id="emailAddressInput" aria-describedby="emailHelp" placeholder="Enter Email Address"
+            </div>
+            <div class="form-group">
+                <label for="listAddressName">Listing Title</label>
+                <input type="text" class="form-control" id="addressInput" aria-describedby="addressHelp" placeholder="Enter Address">
+            </div>
+  
+            <div class="form-group">
+                <label for="listStreetName">Street Name</label>
+                <input type="text" class="form-control" id="streetNameInput" aria-describedby="streetHelp" placeholder="Enter Last Name">
+            </div>
+  
+            <div class="form-group">
+              <label for="inputCityTown">City / Town</label>
+              <input type="email" class="form-control" id="cityTownInput" aria-describedby="cityTownHelp" placeholder="Enter City or Town">
+              <small id="emailHelp" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <label for="inputProvinceState">Province / State</label>
+              <input type="password" class="form-control" id="provinceStateInput" aria-describedby="provinceStateHelp" placeholder="Enter Province or State">
+            </div>
+            <div class="form-group">
+              <label for="inputPostalCode">Postal Code</label>
+              <input type="password" class="form-control" id="postalCodeInput" aria-describedby="postalCodeHelp" placeholder="Enter Postal Code">
+            </div>
+            <div class="form-group">
+              <label for="inputCountry">Country</label>
+              <input type="password" class="form-control" id="countryInput" aria-describedby="countryHelp" placeholder="Enter Country">
+            </div>
+            <div class="form-group">
+              <label for="inputDescription">Description</label>
+              <input type="password" class="form-control" id="signUpInputPassword1" aria-describedby="descriptionHelp" placeholder="Enter Description">
+            </div>
+  
+            <button type="submit" class="btn listAddressButton">Submit</button>
+            <button type="submit" class="btn listAddressCloseButton float-right">Close</button>
+          </form>
+      </div>
+    
+    <div class="myAccountForm container-fluid rounded">
+        <form>
+            <h3>Sign In</h3>
+            <div class="form-group">
+              <label for="signInInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="signInleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="signInInputPassword1">Password</label>
+              <input type="password" class="form-control" id="signInInputPassword1" placeholder="Enter Password">
+            </div>
+  
+            <button type="submit" class="btn signInButton">Submit</button>
+            <button type="submit" class="btn signInCloseButton float-right">Close</button>
+        </form>
+    </div>
+
+    <div class="aboutWindow container-fluid rounded">
+        <form>
+            <h3>About HomeStay</h3>
+            <div class="form-group">
+              <p>
+                  HomeStay is a final project for CSCI 3230U Web Application Development created by Leon Chow and Mark Bryan. It operates by provinding an online marketplace and hospitality service for people to lease or rent short-term homestays. HomeStay does not own any real estate or conduct tours. It is simply a broker which receives percentage service fees in conjunction with every booking. 
+              </p>
+            </div>
+  
+            <button type="submit" class="btn aboutCloseButton">Close</button>
+        </form>
+      </div>    
     </div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxtqseui19HsD_wL29a6LWTcCXjCKOXfs"></script>
   </body>

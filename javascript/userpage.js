@@ -1,4 +1,39 @@
 $(document).ready(function() {
+  $(".myAccountForm").hide();
+  $(".listAddressForm").hide();
+  $(".aboutWindow").hide();
+
+  $(".listAddressToggle").click(function(){
+    $(".listAddressForm").slideToggle(200);
+    $(".myAccountForm").hide();
+    $(".aboutWindow").hide();
+  });
+
+  $(".signInToggle").click(function(){
+    $(".signInForm").slideToggle(200);
+    $(".signUpForm").hide();
+    $(".aboutWindow").hide();
+  });
+
+  $(".aboutToggle").click(function(){
+    $(".aboutWindow").slideToggle(200);
+    $(".signUpForm").hide();
+    $(".signInForm").hide();
+  });
+
+  $(".listAddressCloseButton").click(function(){
+    $(".listAddressForm").slideToggle(200);
+  });
+
+  $(".signInCloseButton").click(function(){
+    $(".signInForm").slideToggle(200);
+  });
+
+  $(".aboutCloseButton").click(function(){
+    $(".aboutWindow").slideToggle(200);
+  });
+
+  // showMap(latValue, lonValue);
     $("#goFindButton").click(function () {
         var findLongitude = parseFloat($("#findAddressLong").val());
         var findLatitude = parseFloat($("#findAddressLat").val());
