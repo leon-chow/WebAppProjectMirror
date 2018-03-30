@@ -1,8 +1,8 @@
-/* Log In Page  */
+/* Custom style for the header, overriding some of Bootstrap'sdefault styling  */
 
 .navbar-nav > li{
-  margin-left:10px;
-  margin-right:10px;
+  margin-left:10px !important;
+  margin-right:10px !important;
 }
 
 .searchField {
@@ -20,6 +20,7 @@
   width: 2em !important;
 }
 
+/* Styles for Sign Up, Sign In, and About winddow */
 .signUpForm, .signInForm, .aboutWindow {
   margin: 6em;
   margin-left: auto;
@@ -32,6 +33,7 @@
   box-shadow: 0px 14px 32px -1px rgba(0,0,0,0.57);
 }
 
+/* Styles for Sign Up, Sign In, and About Buttons */
 .signUpButton {
   background-color: #9CCC65;
   color: white !important;
@@ -57,9 +59,3 @@
 }
 
 
-/* map */
-/* #map {
-  width:400px;
-  height:400px;
-  background-color: yellow;
-} */
