@@ -1,77 +1,49 @@
-//have a statement to hide sign in and sign up button if the user is already logged in. reshow those 2 buttons when
-//user logs out
-
 $(document).ready(function(){
 
-  // var latValue = 48.864716;
-  // var lonValue = 2.349014;
-
-  // // Sets the default value to the location of the device
-  // navigator.geolocation.getCurrentPosition(function(position) {
-  //   getLoc(position.coords.latitude, position.coords.longitude);
-  // });
-
-  
+  // Hide Sign In / Sign Up forms and About window
   $(".signInForm").hide();
   $(".signUpForm").hide();
   $(".aboutWindow").hide();
 
+  // Show toggle Sign Up window when Sign Up button is clicked
+  // Hides the rest of the window
   $(".signUpToggle").click(function(){
     $(".signUpForm").slideToggle(200);
     $(".signInForm").hide();
     $(".aboutWindow").hide();
   });
 
+  // Show toggle Sign In window when Sign In button is clicked
+  // Hides the rest of the window
   $(".signInToggle").click(function(){
     $(".signInForm").slideToggle(200);
     $(".signUpForm").hide();
     $(".aboutWindow").hide();
   });
 
+  // Show toggle About window when About button is clicked
+  // Hides the rest of the window
   $(".aboutToggle").click(function(){
     $(".aboutWindow").slideToggle(200);
     $(".signUpForm").hide();
     $(".signInForm").hide();
   });
 
+  // Handles Sign Up button close button
   $(".signUpCloseButton").click(function(){
     $(".signUpForm").slideToggle(200);
   });
 
+  // Handles Sign In button close button
   $(".signInCloseButton").click(function(){
     $(".signInForm").slideToggle(200);
   });
 
+  // Handles About button close button
   $(".aboutCloseButton").click(function(){
     $(".aboutWindow").slideToggle(200);
   });
 
-  // showMap(latValue, lonValue);
-
 });
 
 
-
-// function showMap(lat, lng) {
-//   var mapProp= {
-//       center:new google.maps.LatLng(lat, lng),
-//       zoom:12,
-//   };
-//   var map=new google.maps.Map(document.getElementById("map-canvas"),mapProp);
-// }
-
-// function getLoc(latPos, lngPos){
-//   latValue = latPos;
-//   lonValue = lngPos;
-
-//   urlWeather = "http://api.apixu.com/v1/forecast.json?key=941cfe7054cc46a4916225844181303&q= "+latValue+","+lonValue+"&days=1";
-//   urlForecast = "http://api.apixu.com/v1/forecast.json?key=941cfe7054cc46a4916225844181303&q="+latValue+","+lonValue+"&days=7"
-
-//   $('#lat').attr("value", latValue);
-//   console.log("latAttribute:" + $('#lat').val());
-
-//   $('#lon').attr("value", lonValue);
-//   console.log("lonAttribute:" + $('#lon').val());
-
-//   showMap(latValue, lonValue);
-// }
