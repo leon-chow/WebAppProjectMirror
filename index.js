@@ -89,6 +89,46 @@ app.get('/logout', function(req, res) {
 });
 
 
+// Process Sign UP
+app.post('/processSignUp', function(req, res) {
+  var name = req.body.signUpName;
+  var lastName = req.body.signUpLastName;
+  var email = req.body.signUpEmail;
+  var password = req.body.signUpPwd;
+  var hashedPassword = bcrypt.hashSync(password);
+
+  var newUser = new User({name: name, lastName: lastName, email: email, hashedPassword: hashedPassword});
+
+  newUser.save(function(error) {
+    if (error) {
+      console.log('Unable to Sign Up: ' + error);
+      res.render('loginPage', {errorMessage: 'Unable to Sign Up.'});
+    } else {
+      req.session.username = email;
+      res.render('userPage', {name: name, lastName: lastName, email: email, password: hashedPassword});
+    }
+
+  });
+});
+
+// Process Sign In
+app.post('/processSignIn', function(req, res) {
+  var email = req.body.signInEmail;
+  var password = req.body.signInPwd;
+
+  User.find({email: email}).then(function(results) {
+    if (results.length == 0) {
+      // Login failed
+      res.render('loginPage');
+    } else {
+      // login success
+      if (bcrypt.compareSync(password, results[0].hashedPassword)) {
+        req.session.username = email;
+        res.render('userPage', {email: email});
+      }
+    }
+  });
+});
 
 
 app.listen(3004, function() {
