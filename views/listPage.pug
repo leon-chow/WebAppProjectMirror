@@ -1,0 +1,29 @@
+extends userLayout
+
+block content
+  .listingForm.container-fluid.rounded
+      form(action='/processListing', method='post')
+        h3 Listing Information:
+        .form-group
+          label(for='listingTitle') Listing Title
+          input.form-control(id='listingTitle' name='listingTitle' type='text' aria-describedby='Enter listing title' placeholder='Enter listing title')
+        .form-group
+          label(for='listingStreetName') Street Name
+          input.form-control(id='listingStreetName' name='listingStreetName' type='text' aria-describedby='Enter listing name' placeholder='Enter listing name')
+        .form-group
+          label(for='listingCity') City
+          input.form-control(id='listingCity' name='listingCity' type='text' aria-describedby='Enter listing city' placeholder='Enter listing city')  
+        .form-group
+          label(for='listingProvince') Province
+          input.form-control(id='listingProvince' name='listingProvince' type='text' aria-describedby='Enter listing province' placeholder='Enter listing province') 
+        .form-group
+          label(for='listingPostalCode') Postal Code
+          input.form-control(id='listingPostalCode' name='listingPostalCode' type='text' aria-describedby='Enter listing postal code' placeholder='Enter listing postal code') 
+        .form-group
+          label(for='listingCountry') Country
+          input.form-control(id='listingCountry' name='listingCountry' type='text' aria-describedby='Enter listing country' placeholder='Enter listing country')
+        .form-group
+          label(for='listingDescription') Description
+          input.form-control(id='listingDescription' name='listingDescription' type='text' aria-describedby='Enter listing description' placeholder='Enter listing description')
+        button.btn.listingButton(type='submit') Submit
+        button.btn.listingCloseButton.float-right(type='submit') Close
