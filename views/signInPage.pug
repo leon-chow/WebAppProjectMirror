@@ -1,0 +1,16 @@
+extends loginLayout
+
+block content
+  // Sign In Form
+  .container
+    .signInForm.container-fluid.rounded
+      form(action='/processSignIn', method='post',)
+        h3 Sign In
+        .form-group
+          label(for='signInEmail') Email address
+          input.form-control(id='signInEmail' name='signInEmail' type='email' aria-describedby='Enter Email' placeholder='Enter email')
+        .form-group
+          label(for='signInPwd') Password
+          input.form-control(id='signInPwd' name='signInPwd' type='password' placeholder='Enter Password')
+        button.btn.signInButton(type='submit') Submit
+        button.btn.signInCloseButton.float-right(type='submit') Close
