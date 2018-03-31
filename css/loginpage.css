@@ -6,13 +6,30 @@
 }
 
 .searchField {
-  width: 20em !important;
+  height: 2em !important;
+  border: none !important;
+  border-top-left-radius: 50px !important;
+  border-bottom-left-radius: 50px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important; 
 } 
 
 .searchButton {
-  border-top-right-radius: 50% !important;
-  border-bottom-right-radius: 50% !important;
+  height: 2em !important;
+  text-align: center;
+  width: 3em !important;
+  border: none !important;
+  padding: auto 0 auto 0;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-right-radius: 50px !important;
+  border-bottom-right-radius: 50px !important;
 }
+
+/* .searchIcon {
+  margin-left: 0;
+  padding-left: 0;
+} */
 
 .inputLeft {
   border-top-left-radius: 90% !important;
@@ -21,7 +38,7 @@
 }
 
 /* Styles for Sign Up, Sign In, and About winddow */
-.signUpForm, .signInForm, .aboutWindow {
+.signUpForm, .signInForm, .aboutWindow, .listingForm, .myAccountForm {
   margin: 6em;
   margin-left: auto;
   margin-right: auto;
@@ -39,14 +56,22 @@
   color: white !important;
 }
 
-.signInButton {
+.signInButton, .listingButton, .myAccountButton {
   background-color: #42A5F5;
   color: white !important;
 }
 
-.signUpCloseButton, .signInCloseButton, .aboutCloseButton, {
+.signUpCloseButton, .signInCloseButton, .aboutCloseButton, .listingCloseButton, .myAccountCloseButton {
   background-color: #90A4AE;
   color: white !important;
+}
+
+.changePasswordButton {
+  background-color: #EB5757;
+  color: white;
+  margin-left: 3.5em !important;
+  margin-right: auto !important;
+
 }
 
 .btn {
