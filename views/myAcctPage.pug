@@ -1,0 +1,23 @@
+extends userLayout
+
+block content
+  .myAccountForm.container-fluid.rounded
+    form(action='/processMyAcct', method='post')
+      h3 Edit My Account
+      .form-group
+        label(for='acctName') Name
+        input.form-control(id='myAcctName' name='myAcctName' type='text' aria-describedby='Account name' placeholder='Account name')
+      .form-group
+        label(for='acctLastName') Last Name
+        input.form-control(id='myAcctLastName' name='myAcctLastName' type='text' aria-describedby='Account last name' placeholder='Account last name')
+
+      .form-group
+        label(for='acctEmail') Email address
+        input.form-control(id='myAcctEmail' name='myAcctEmail' type='text' aria-describedby='Account email' placeholder='Account email')
+
+      .form-group
+        label(for='acctPassword') Password
+        input.form-control(id='acctPassword' name='acctPassword' type='password' placeholder='Account password')
+      button.btn.myAccountButton(type='submit') Save
+      //- button.btn.changePasswordButton(type='submit') Change Password
+      button.btn.myAccountCloseButton.float-right(type='submit') Close
