@@ -1,0 +1,29 @@
+{
+  "name": "homestay",
+  "version": "1.0.0",
+  "description": "Final project for CSCI 3230 Web Application Development by Mark Bryan and Leon Chow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkBryan/WebAppProject.git"
+  },
+  "author": "Mark Bryan and Leon Chow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkBryan/WebAppProject/issues"
+  },
+  "homepage": "https://github.com/MarkBryan/WebAppProject#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.0.10",
+    "pug": "^2.0.0",
+    "uuid": "^3.2.1"
+  }
+}
