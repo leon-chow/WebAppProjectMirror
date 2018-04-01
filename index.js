@@ -79,7 +79,7 @@ app.get('/listplace', function(req, res) {
 
 //  route for editing user account info
 app.get('/myaccount', function(req, res) {
-  res.render('myAcctpage');
+  res.render('myAcctPage');
 });
 
 
@@ -131,6 +131,6 @@ app.post('/processSignIn', function(req, res) {
 });
 
 
-app.listen(3004, function() {
-  console.log('Listening on port 3004');
+app.listen(3005, function() {
+  console.log('Listening on port 3005');
 });
