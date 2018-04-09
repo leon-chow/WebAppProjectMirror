@@ -10,7 +10,7 @@ var assert = require('assert');
 
 // configure database
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/homestay');
+mongoose.connect('mongodb://localhost:27017/homestayuser');
                  //,{useMongoClient: true});
 
 // middleware
@@ -33,60 +33,49 @@ app.use(session({
   secret: 'apollo slackware prepositional expectations'
 }));
 
+// utility code
+//var usernames = [];
+function userExists(toFind) {
+  for (var i = 0; i < usernames.length; i++) {
+    if (usernames[i] === toFind) {
+      return true;
+    }
+  }
+  return false;
+}
 
+// database schema
+var Schema = mongoose.Schema;
+var userSchema = new Schema({
+  email: {type: String,
+          unique: true,
+          index: true},
+  name: String,
+  lastName: String,
+  hashedPassword: String
+}, {collection: 'users'});
+var User = mongoose.model('user', userSchema);
 
-
+// var studentSchema = new Schema({
+//   sid: {type: String,
+//         validate: [/^1[0-9]{8}$/, 'must be 9 digits'],
+//         unique: true,
+//         index: true},
+//   firstName: String,
+//   lastName: {type: String,
+//              index: true},
+//   gpa: {type: Number,
+//         min: 0.0,
+//         max: 4.3},
+//   startDate: Date,
+//   fullTime: Boolean
+// }, {collection: 'students'});
+// var Student = mongoose.model('student', studentSchema);
 
 
 
 
 // routes
-
-// redirect "/" to "/index"
-app.get("/", function (req, res){
-  res.redirect('/index');
-});
-
-// Index or login page
-app.get("/index", function (req, res){
-  res.render('loginPage');
-});
-
-//  route for signup page
-app.get('/signup', function(req, res) {
-  res.render('signUpPage');
-});
-
-//  route for signin page
-app.get('/signin', function(req, res) {
-  res.render('signInPage');
-});
-
-//  route for about page
-app.get('/about', function(req, res) {
-  res.render('aboutPage');
-});
-
-//  route for userpage or successful signin
-app.get('/userpage', function(req, res) {
-  res.render('userPage');
-});
-
-//  route for listing a place
-app.get('/listplace', function(req, res) {
-  res.render('listPage');
-});
-
-//  route for editing user account info
-app.get('/myaccount', function(req, res) {
-  res.render('myAcctPage');
-});
-
-
-//  route for logging out
-app.get('/logout', function(req, res) {
-  res.redirect('/');
-});
 
 
 // Process Sign UP
@@ -131,6 +120,53 @@ app.post('/processSignIn', function(req, res) {
 });
 
 
-app.listen(3005, function() {
-  console.log('Listening on port 3005');
+app.get("/", function (req, res){
+  res.redirect('/index');
+});
+
+// Index or login page
+app.get("/index", function (req, res){
+  res.render('loginPage');
+});
+
+
+app.get('/signup', function(req, res) {
+  req.session.username = '';
+  res.render('signUpPage');
+});
+
+app.get('/signin', function(req, res) {
+  res.render('signInPage');
+});
+
+app.get('/about', function(req, res) {
+  req.session.username = '';
+  res.render('aboutPage');
+});
+
+app.get('/userpage', function(req, res) {
+  req.session.username = '';
+  res.render('userPage');
+});
+
+app.get('/listplace', function(req, res) {
+  req.session.username = '';
+  res.render('listPage');
+});
+
+app.get('/myaccount', function(req, res) {
+  req.session.username = '';
+  res.render('myAcctpage');
+});
+
+
+// Log Out page is the same as the Log In / Sign In / Sign Up page
+app.get('/logout', function(req, res) {
+  req.session.username = '';
+  res.redirect('/');
+});
+
+
+app.listen(3004, function() {
+  console.log('Listening on port 3004');
 });
