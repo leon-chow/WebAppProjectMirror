@@ -94,6 +94,41 @@ app.get('/signup', function(req, res) {
 // Sign In form
 app.get('/signin', function(req, res) {
   res.render('signInPage');
+
+});
+
+// Update account information
+app.post('/processMyAcct', function(req, res) {
+  
+  id = req.id;
+  name = req.body.myAcctName;
+  lastName = req.body.myAcctLastName;
+  
+  password = req.body.acctPassword;
+  hashedPassword = bcrypt.hashSync(password);
+  email = req.body.myAcctEmail;
+  console.log(id);
+
+  var userData = {id: id,
+      name: name,
+      lastName: lastName,
+      hashedPassword: hashedPassword,
+      email: email};
+      
+  User.find({email: email}).then(function(results) {
+    if (results.length > 0) {
+    // update the student
+      User.update({id: id},
+                userData,
+                {multi: false},
+                function(error, numAffected) {
+      if (error || numAffected != 1) {
+        console.log('Unable to update student!');
+      }
+      });
+    }
+  });
+  res.render('myAcctPage');
 });
 
 
