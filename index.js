@@ -92,20 +92,19 @@ app.get('/signup', function(req, res) {
 // Sign In form
 app.get('/signin', function(req, res) {
   res.render('signInPage');
-
 });
 
 // Update account information
 app.post('/processMyAcct', function(req, res) {
   
-  id = req.id;
-  name = req.body.myAcctName;
-  lastName = req.body.myAcctLastName;
-  
-  password = req.body.acctPassword;
-  hashedPassword = bcrypt.hashSync(password);
-  email = req.body.myAcctEmail;
+  var name = req.body.myAcctName;
+  var lastName = req.body.myAcctLastName;
+  var id = mongoose.Types.ObjectId;
   console.log(id);
+  req.session.id = id;
+  var password = req.body.acctPassword;
+  var hashedPassword = bcrypt.hashSync(password);
+  var email = req.body.myAcctEmail;
 
   var userData = {id: id,
       name: name,
@@ -113,7 +112,7 @@ app.post('/processMyAcct', function(req, res) {
       hashedPassword: hashedPassword,
       email: email};
       
-  User.find({email: email}).then(function(results) {
+  User.find({id: id}).then(function(results) {
     if (results.length > 0) {
     // update the student
       User.update({id: id},
