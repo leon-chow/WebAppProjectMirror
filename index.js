@@ -98,33 +98,35 @@ app.get('/signin', function(req, res) {
 
 // Update account information
 app.post('/processMyAcct', function(req, res) {
-  
+
   var name = req.body.myAcctName;
   var lastName = req.body.myAcctLastName;
-  var id = mongoose.Types.ObjectId;
-  console.log(id);
-  req.session.id = id;
   var password = req.body.acctPassword;
   var hashedPassword = bcrypt.hashSync(password);
   var email = req.body.myAcctEmail;
 
-  var userData = {id: id,
+  var userData = {
       name: name,
       lastName: lastName,
       hashedPassword: hashedPassword,
-      email: email};
+      email: email
+    };
       
-  User.find({id: id}).then(function(results) {
+  User.find({email: email}).then(function(results) {
     if (results.length > 0) {
     // update the student
-      User.update({id: id},
+      User.update({email: email},
                 userData,
                 {multi: false},
                 function(error, numAffected) {
-      if (error || numAffected != 1) {
+      if (error || numAffected < 1) {
         console.log('Unable to update student!');
+      } else {
+        console.log("Saved changes!");
       }
       });
+    } else {
+      console.log('Unable to update student!');
     }
   });
   res.render('myAcctPage');
