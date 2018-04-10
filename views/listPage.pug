@@ -7,9 +7,12 @@ block content
         .form-group
           label(for='listingTitle') Listing Title
           input.form-control(id='listingTitle' name='listingTitle' type='text' aria-describedby='Enter listing title' placeholder='Enter listing title')
+        .form-group 
+          label(for='listingDescription') Description
+          input.form-control(id='listingDescription' name='listingDescription' type='text' aria-describedby='Enter listing description' placeholder='Enter listing description')
         .form-group
           label(for='listingStreetName') Street Name
-          input.form-control(id='listingStreetName' name='listingStreetName' type='text' aria-describedby='Enter listing name' placeholder='Enter listing name')
+          input.form-control(id='listingStreetName' name='listingStreetName' type='text' aria-describedby='Enter listing street name' placeholder='Enter listing street name')
         .form-group
           label(for='listingCity') City
           input.form-control(id='listingCity' name='listingCity' type='text' aria-describedby='Enter listing city' placeholder='Enter listing city')  
@@ -23,7 +26,7 @@ block content
           label(for='listingCountry') Country
           input.form-control(id='listingCountry' name='listingCountry' type='text' aria-describedby='Enter listing country' placeholder='Enter listing country')
         .form-group
-          label(for='listingDescription') Description
-          input.form-control(id='listingDescription' name='listingDescription' type='text' aria-describedby='Enter listing description' placeholder='Enter listing description')
+          label(for='listingContact') Contact
+          input.form-control(id='listingContact' name='listingContact' type='text' aria-describedby='Enter contact info email or phone number' placeholder='Enter contact info email or phone number')
         button.btn.listingButton(type='submit') Submit
         button.btn.listingCloseButton.float-right(type='submit') Close

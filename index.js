@@ -10,7 +10,7 @@ var assert = require('assert');
 
 // configure database
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/homestayuser');
+mongoose.connect('mongodb://localhost:27017/homestay');
                  //,{useMongoClient: true});
 
 // middleware
@@ -46,6 +46,8 @@ function userExists(toFind) {
 
 // database schema
 var Schema = mongoose.Schema;
+
+// User schema
 var userSchema = new Schema({
   email: {type: String,
           unique: true,
@@ -56,29 +58,44 @@ var userSchema = new Schema({
 }, {collection: 'users'});
 var User = mongoose.model('user', userSchema);
 
-// var studentSchema = new Schema({
-//   sid: {type: String,
-//         validate: [/^1[0-9]{8}$/, 'must be 9 digits'],
-//         unique: true,
-//         index: true},
-//   firstName: String,
-//   lastName: {type: String,
-//              index: true},
-//   gpa: {type: Number,
-//         min: 0.0,
-//         max: 4.3},
-//   startDate: Date,
-//   fullTime: Boolean
-// }, {collection: 'students'});
-// var Student = mongoose.model('student', studentSchema);
-
+// MyListing schema
+var listingSchema = new Schema({
+  listingTitle: String,
+  description: String,
+  street: String,
+  city: String,
+  province: String,
+  postalCode: String,
+  country: String,
+  contact: String, 
+}, {collection: 'listings'});
+var Listing = mongoose.model('listing', listingSchema);
 
 
 
 // routes
 
+app.get("/", function (req, res){
+  res.redirect('/index');
+});
 
-// Process Sign UP
+// Index or login page
+app.get("/index", function (req, res){
+  res.render('loginPage');
+});
+
+// Sign Up form
+app.get('/signup', function(req, res) {
+  res.render('signUpPage');
+});
+
+// Sign In form
+app.get('/signin', function(req, res) {
+  res.render('signInPage');
+});
+
+
+// Process Sign Up
 app.post('/processSignUp', function(req, res) {
   var name = req.body.signUpName;
   var lastName = req.body.signUpLastName;
@@ -100,6 +117,7 @@ app.post('/processSignUp', function(req, res) {
   });
 });
 
+
 // Process Sign In
 app.post('/processSignIn', function(req, res) {
   var email = req.body.signInEmail;
@@ -120,42 +138,55 @@ app.post('/processSignIn', function(req, res) {
 });
 
 
-app.get("/", function (req, res){
-  res.redirect('/index');
-});
-
-// Index or login page
-app.get("/index", function (req, res){
-  res.render('loginPage');
-});
-
-
-app.get('/signup', function(req, res) {
-  req.session.username = '';
-  res.render('signUpPage');
-});
-
-app.get('/signin', function(req, res) {
-  res.render('signInPage');
-});
-
+// About page
 app.get('/about', function(req, res) {
-  req.session.username = '';
   res.render('aboutPage');
 });
 
+// User page or the page after user logins successfully
 app.get('/userpage', function(req, res) {
-  req.session.username = '';
+  // req.session.username = '';
   res.render('userPage');
 });
 
+// Form for creating a homestay listing
 app.get('/listplace', function(req, res) {
-  req.session.username = '';
+  // req.session.username = '';
   res.render('listPage');
 });
 
+
+
+// Process Listing
+app.post('/processListing', function(req, res) {
+  var listingTitle = req.body.listingTitle;
+  var description = req.body.listingDescription;
+  var street = req.body.listingStreetName;
+  var city = req.body.listingCity;
+  var province = req.body.listingProvince;
+  var postalCode = req.body.listingPostalCode;
+  var country = req.body.listingCountry;
+  var contact = req.body.listingContact;
+
+  var newListing = new Listing({listingTitle: listingTitle, description: description, street: street, city: city, province: province, postaCode: postalCode, country: country, contact: contact});
+
+  newListing.save(function(error) {
+    if (error) {
+      console.log('Unable to create listing: ' + error);
+      res.render('userPage', {userPageErrorMessage: 'Unable to create listing.'});
+    } else {
+      // req.session.username = email;
+      res.render('userPage', {listingTitle: listingTitle, description: description, street: street, city: city, province: province, postaCode: postalCode, country: country, contact: contact});
+    }
+  });
+
+ 
+});
+
+
+// Form for editing a the account information
 app.get('/myaccount', function(req, res) {
-  req.session.username = '';
+  // req.session.username = '';
   res.render('myAcctpage');
 });
 
