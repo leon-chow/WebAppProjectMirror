@@ -96,7 +96,7 @@ app.get('/signin', function(req, res) {
   res.render('signInPage');
 });
 
-  
+
 // Process Sign Up
 app.post('/processSignUp', function(req, res) {
   var name = req.body.signUpName;
