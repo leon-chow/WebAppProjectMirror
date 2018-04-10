@@ -1,0 +1,24 @@
+extends userLayout
+
+block content
+  h1 Search Result
+  if (errorMessage)
+    div= errorMessage
+  table(class="table")
+    tr
+      th Listing Title
+      th Description
+      th Street
+      th City
+      th Province
+      th Country
+      th Contact
+    each listing in listings
+      tr
+        td= listing.listingTitle
+        td= listing.description
+        td= listing.street
+        td= listing.city
+        td= listing.province
+        td= listing.country
+        td= listing.contact

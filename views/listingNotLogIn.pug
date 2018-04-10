@@ -1,0 +1,18 @@
+extends loginLayout
+
+block content
+  h1 Search Result
+  if (errorMessage)
+    div= errorMessage
+  table(class="table")
+    tr
+      th Listing Title
+      th Description
+      th Street
+      th City
+    each listing in listings
+      tr
+        td= listing.listingTitle
+        td= listing.description
+        td= listing.street
+        td= listing.city

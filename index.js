@@ -73,6 +73,8 @@ var Listing = mongoose.model('listing', listingSchema);
 
 
 
+
+
 // routes
 
 app.get("/", function (req, res){
@@ -122,7 +124,6 @@ app.post('/processSignUp', function(req, res) {
 app.post('/processSignIn', function(req, res) {
   var email = req.body.signInEmail;
   var password = req.body.signInPwd;
-
   User.find({email: email}).then(function(results) {
     if (results.length == 0) {
       // Login failed
@@ -156,7 +157,6 @@ app.get('/listplace', function(req, res) {
 });
 
 
-
 // Process Listing
 app.post('/processListing', function(req, res) {
   var listingTitle = req.body.listingTitle;
@@ -179,12 +179,28 @@ app.post('/processListing', function(req, res) {
       res.render('userPage', {listingTitle: listingTitle, description: description, street: street, city: city, province: province, postaCode: postalCode, country: country, contact: contact});
     }
   });
-
- 
 });
 
 
-// Form for editing a the account information
+// Display search results from the search bar while not Log in
+app.post('/listingNotLogIn', function(request, response) {
+  var searchCity = request.body.searchPlace;
+  Listing.find({city: searchCity}).then(function(results) {
+    response.render('listingNotLogIn', {title: 'Search Result', listings: results});
+  });
+
+});
+
+// Display search results from the search bar while Log in
+app.post('/listingLogIn', function(request, response) {
+  var searchCity = request.body.searchPlace;
+  Listing.find({city: searchCity}).then(function(results) {
+    response.render('listingLogIn', {title: 'Search Result', listings: results});
+  });
+
+});
+
+// Form for editing the account information
 app.get('/myaccount', function(req, res) {
   // req.session.username = '';
   res.render('myAcctpage');

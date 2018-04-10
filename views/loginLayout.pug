@@ -15,9 +15,9 @@ block navbar
             a.nav-link.signInToggle(href='/signin') Sign In
           li.nav-item
             a.nav-link.aboutToggle(href='/about') About
-        form.form-inline.mt-2.mt-md-0
+        form.form-inline.mt-2.mt-md-0(action='/listingNotLogin', method='post')
           .input-group
-            input.form-control.searchField(id='searchPlace' name='searchPlace' type='text' placeholder='City, Postal code' aria-label='Country, City, Postal code' aria-describedby='Search Place')
+            input.form-control.searchField(id='searchPlace' name='searchPlace' type='text' placeholder='Enter city name' aria-label='Country, City, Postal code' aria-describedby='Search Place')
           button.input-group-text.text-center.searchButton(type='submit')
             i.material-icons.searchIcon search
 
