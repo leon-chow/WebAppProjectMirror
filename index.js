@@ -72,8 +72,7 @@ var listingSchema = new Schema({
 var Listing = mongoose.model('listing', listingSchema);
 
 
-
-
+var currentUsername;
 
 // routes
 
@@ -94,6 +93,44 @@ app.get('/signup', function(req, res) {
 // Sign In form
 app.get('/signin', function(req, res) {
   res.render('signInPage');
+});
+
+// Update account information
+app.post('/processMyAcct', function(req, res) {
+
+
+  var name = req.body.myAcctName;
+  var lastName = req.body.myAcctLastName;
+  var password = req.body.acctPassword;
+  var hashedPassword = bcrypt.hashSync(password);
+  var email = req.body.myAcctEmail;
+
+  var userData = {
+      name: name,
+      lastName: lastName,
+      hashedPassword: hashedPassword,
+      email: email
+    };
+      
+  User.find({email: email}).then(function(results) {
+    if (results.length > 0) {
+    // update the student
+      User.update({email: email},
+                userData,
+                {multi: false},
+                function(error, numAffected) {
+      if (error || numAffected < 1) {
+        console.log('Unable to update student!');
+      } else {
+        console.log("Saved changes!");
+      }
+      });
+    } else {
+      console.log('Unable to update student!');
+    }
+  });
+  currentUsername = email;
+  res.render('myAcctPage');
 });
 
 
@@ -131,6 +168,7 @@ app.post('/processSignIn', function(req, res) {
     } else {
       // login success
       if (bcrypt.compareSync(password, results[0].hashedPassword)) {
+        currentUsername = email;
         req.session.username = email;
         res.render('userPage', {email: email});
       }
@@ -203,17 +241,18 @@ app.post('/listingLogIn', function(request, response) {
 // Form for editing the account information
 app.get('/myaccount', function(req, res) {
   // req.session.username = '';
-  res.render('myAcctpage');
+  res.render('myAcctPage', {email: 1, password: 1, name: 1, lastName: 1});
 });
 
 
 // Log Out page is the same as the Log In / Sign In / Sign Up page
 app.get('/logout', function(req, res) {
   req.session.username = '';
+  currentUsername = '';
   res.redirect('/');
 });
 
 
-app.listen(3005, function() {
+app.listen(3004, function() {
   console.log('Listening on port 3004');
 });
