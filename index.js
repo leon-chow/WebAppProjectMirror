@@ -36,7 +36,6 @@ app.use(session({
   },
   resave: false,
   saveUninitialized: false,
-  //cookie: {secure: true},
   secret: 'apollo slackware prepositional expectations'
 }));
 
@@ -189,13 +188,11 @@ app.get('/about', function(req, res) {
 
 // User page or the page after user logins successfully
 app.get('/userpage', function(req, res) {
-  // req.session.username = '';
   res.render('userPage');
 });
 
 // Form for creating a homestay listing
 app.get('/listplace', function(req, res) {
-  // req.session.username = '';
   res.render('listPage');
 });
 
@@ -218,7 +215,6 @@ app.post('/processListing', function(req, res) {
       console.log('Unable to create listing: ' + error);
       res.render('userPage', {userPageErrorMessage: 'Unable to create listing.'});
     } else {
-      // req.session.username = email;
       res.render('userPage', {listingTitle: listingTitle, description: description, street: street, city: city, province: province, postaCode: postalCode, country: country, contact: contact});
     }
   });
@@ -244,7 +240,6 @@ app.post('/listingLogIn', function(request, response) {
 
 // Form for editing the account information
 app.get('/myaccount', function(req, res) {
-  // req.session.username = '';
   res.render('myAcctPage');
 });
 
