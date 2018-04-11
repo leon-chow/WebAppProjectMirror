@@ -1,3 +1,10 @@
+//Mark Bryan 100569292 and Leon Chow 100617197 This web application allows the user to sign up and login in 
+//to the website. Their information is stored in a database with session tracking and verification. The user
+//can add a listing and press the magnifying glass to display a table of listnings that they have added.
+//The user can also navigate to the about page which gives more information, as well as changing their
+//login information and first and last name, which will show the changes in the database. Also uses pug
+//for all the page layouts.
+
 // import modules
 var express = require('express');
 var app = express();
@@ -34,7 +41,6 @@ app.use(session({
 }));
 
 // utility code
-//var usernames = [];
 function userExists(toFind) {
   for (var i = 0; i < usernames.length; i++) {
     if (usernames[i] === toFind) {
@@ -95,9 +101,8 @@ app.get('/signin', function(req, res) {
   res.render('signInPage');
 });
 
-// Update account information
+// Update account information post 
 app.post('/processMyAcct', function(req, res) {
-
 
   var name = req.body.myAcctName;
   var lastName = req.body.myAcctLastName;
@@ -114,16 +119,16 @@ app.post('/processMyAcct', function(req, res) {
       
   User.find({email: email}).then(function(results) {
     if (results.length > 0) {
-    // update the student
+    // update the user with the new information
       User.update({email: email},
                 userData,
                 {multi: false},
                 function(error, numAffected) {
-      if (error || numAffected < 1) {
-        console.log('Unable to update student!');
-      } else {
-        console.log("Saved changes!");
-      }
+        if (error || numAffected < 1) {
+          console.log('Unable to update student!');
+        } else {
+          console.log("Saved changes!");
+        }
       });
     } else {
       console.log('Unable to update student!');
@@ -235,13 +240,12 @@ app.post('/listingLogIn', function(request, response) {
   Listing.find({city: searchCity}).then(function(results) {
     response.render('listingLogIn', {title: 'Search Result', listings: results});
   });
-
 });
 
 // Form for editing the account information
 app.get('/myaccount', function(req, res) {
   // req.session.username = '';
-  res.render('myAcctPage', {email: 1, password: 1, name: 1, lastName: 1});
+  res.render('myAcctPage');
 });
 
 
